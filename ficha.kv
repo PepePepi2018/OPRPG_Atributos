@@ -1,0 +1,1961 @@
+<StartScreen>
+    BoxLayout:
+        padding: 10
+        spacing: 5
+
+        Button:
+            text: 'Criar Ficha'
+            on_press: root.manager.current = 'inputxp'
+        Button:
+            text: 'Atualizar Ficha'
+            on_press: root.PegarDados()
+
+<InputXPScreen>
+    exp: exp
+    BoxLayout:
+        spacing: (root.height)*0.10
+        padding: (root.height)*0.25
+        orientation: 'vertical'            
+        Label:
+            text: 'Coloque a sua experiência abaixo'
+            size_hint_y: 0.1
+            size_hint_x: 0.5    
+            pos_hint: {'x': 0.25}
+        TextInput:
+            id: exp
+            size_hint_y: 0.1
+            size_hint_x: 0.25
+            font_size: (root.height)*0.07
+            pos_hint: {'x': 0.375}
+            multiline: False
+            halign: 'center'
+            input_filter: 'int'
+        Button:
+            text: 'Essa é a minha experiência'
+            size_hint_y: 0.1
+            size_hint_x: 0.4
+            pos_hint: {'x': 0.3}
+            on_press: root.processarXP(exp)
+
+<AttXPScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: (root.height)*0.10
+        padding: (root.height)*0.25
+
+        Label:
+            id: apresentacao
+            size_hint_y: 0.1
+            size_hint_x: 0.5    
+            pos_hint: {'x': 0.25}
+
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.7
+            spacing: (root.height)*0.10
+
+
+            Label:
+                text: 'Recebi isso de experiência:'
+                size_hint_y: 0.2
+                size_hint_x: 0.5    
+                
+                pos_hint: {'x': 0.25}
+            Label:
+                text: 'Haki foi isso:'
+                size_hint_y: 0.2
+                size_hint_x: 0.5    
+                pos_hint: {'x': 0.25}
+
+            TextInput:
+                input_filter: 'int'
+                id: inputexp
+                size_hint_y: 0.8
+                size_hint_x: 0.2
+                font_size: (root.height)*0.07
+                pos_hint: {'x': 0.125}
+                multiline: False
+                halign: 'center'
+                input_filter: 'int'
+
+            TextInput:
+                input_filter: 'int'
+                id: inputexpextra
+                size_hint_y: 0.8
+                size_hint_x: 0.2
+                font_size: (root.height)*0.07
+                pos_hint: {'x': 0.625}
+                multiline: False
+                halign: 'center'
+                input_filter: 'int'
+
+        Button:
+            text: "Ok"
+            size_hint_y: 0.2
+            size_hint_x: 0.4
+            pos_hint: {'x': 0.3}
+            on_press: root.AttFicha()
+
+<RacaScreen>
+
+    acerto: acerto
+    pontaria: pontaria
+    esquiva: esquiva
+    bloqueio: bloqueio
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Escolha a sua raça"
+            halign: 'center'
+            yalign: 'middle'
+            size_hint_x: 0.5
+            size_hint_y: 0.05
+            pos_hint: {'x': 0.25}
+                    
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.75
+
+            ToggleButton:
+                text: "Humano Normal"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 0)
+
+            ToggleButton:
+                text: "Braços Longos"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 1)
+  
+            ToggleButton:
+                text: "Pernas Longas"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 2)
+
+            ToggleButton:
+                text: "Gigante"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 3)
+
+            ToggleButton:
+                text: "Mink Bovino"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 4)
+
+            ToggleButton:
+                text: "Mink Canino"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 5)
+
+            ToggleButton:
+                text: "Mink Caprino"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 6)
+
+            ToggleButton:
+                text: "Mink Felino"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 7)
+
+            ToggleButton:
+                text: "Mink Gorila"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 8)
+
+            ToggleButton:
+                text: "Mink Hiena"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 9)
+
+            ToggleButton:
+                text: "Mink Lagomorfo"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 10)
+
+            ToggleButton:
+                text: "Mink Macaco"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 11)
+
+            ToggleButton:
+                text: "Mink Marsupial"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 12)
+
+            ToggleButton:
+                text: "Mink Roedor"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 13)
+
+            ToggleButton:
+                text: "Mink Suíno"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 14)
+
+            ToggleButton:
+                text: "Mink Ursídeo"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 15)
+
+            ToggleButton:
+                text: "Mink Xenartros"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 16)
+
+            ToggleButton:
+                text: "Tritão Agulhão"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 17)
+
+            ToggleButton:
+                text: "Tritão Cação Luminoso"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 18)
+
+            ToggleButton:
+                text: "Tritão Carpa"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 19)
+  
+            ToggleButton:
+                text: "Tritão Enguia"
+                group: 'raca'
+                size_hint_y: 1/19
+                on_press: root.MudarRaca(root, 20)
+
+            ToggleButton:
+                text: "Tritão Grande Tubarão Branco"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 21)
+
+            ToggleButton:
+                text: "Tritão Lula"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 22)
+
+            ToggleButton:
+                text: "Tritão Peixe Baiacu Tigre"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 23)  
+
+            ToggleButton:
+                text: "Tritão Peixe Kisu"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 24)
+
+            ToggleButton:
+                text: "Tritão Polvo"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 25)
+
+            ToggleButton:
+                text: "Tritão Raia"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 26)
+
+            ToggleButton:
+                text: "Tritão Tubarão-Baleia"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 27)
+  
+            ToggleButton:
+                text: "Tritão Tubarão Cabeça de Martelo"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 28)
+
+            ToggleButton:
+                text: "Tritão Tubarão-Serra"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 29)
+
+            ToggleButton:
+                text: "Tritão Tubarão Tapete Japonês"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 30)
+
+            ToggleButton:
+                text: "Sireno"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 31)
+
+            ToggleButton:
+                text: "Celestial"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 32)
+
+            ToggleButton:
+                text: "Anão"
+                group: 'raca'
+                size_hint_y: 1/19 
+                on_press: root.MudarRaca(root, 33)
+  
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.15
+
+            GridLayout:
+                cols: 2
+
+
+                Label:
+                    text: "Acerto"
+                    valign: 'middle'
+                    size_hint_y: 0.5
+
+                CheckBox:
+                    group: 'Escolha1'
+                    disabled: True
+                    id: acerto
+                    size_hint_y: 0.5
+    
+                Label:
+                    text: "Pontaria"
+                    valign: 'middle'
+                    size_hint_y: 0.5
+
+                CheckBox:
+                    group: 'Escolha1'
+                    disabled: True
+                    id: pontaria
+                    size_hint_y: 0.5
+
+            GridLayout:
+                cols: 2
+
+                Label:
+                    text: "Esquiva"
+                    valign: 'middle'
+                    size_hint_y: 0.5
+
+                CheckBox:
+                    group: 'Escolha2'
+                    disabled: True
+                    id: esquiva
+                    size_hint_y: 0.5
+
+                Label:
+                    text: "Bloqueio"
+                    valign: 'middle'
+                    size_hint_y: 0.5
+
+                CheckBox:
+                    group: 'Escolha2'
+                    disabled: True
+                    id: bloqueio
+                    size_hint_y: 0.5
+
+        Button:
+            text: "Pronto"
+            size_hint_y: 0.05
+            size_hint_x: 0.5
+            pos_hint: {'x': 0.25}
+            on_press: root.ProcessarRaca(acerto, esquiva, pontaria, bloqueio)
+<BasicEdcScreen>
+    dano: dano
+    acerto: acerto
+    esquiva: esquiva
+
+    BoxLayout:
+        spacing: (root.height)*0.10
+        padding: (root.height)*0.15
+        orientation: 'vertical'
+        Label:
+            text: "Infelizmente em seu level você só pode escolher entre as opções básicas de EDC"
+        
+        GridLayout:
+            cols: 3
+
+            GridLayout:
+                cols: 2
+
+                Label:
+                    text: "Dano"
+                    valign: 'middle'
+
+                CheckBox:
+                    group: 'DandR'
+                    active: True
+                    id: dano
+                
+                Label:
+                    text: "Resistência"
+                    valign: 'middle'
+                
+                CheckBox:
+                    group: 'DandR'
+                    active: True
+
+            GridLayout:
+                cols: 2
+
+                Label:
+                    text: "Acerto"
+                    valign: 'middle'
+
+                CheckBox:
+                    group: 'AandP'
+                    active: True
+                    id: acerto
+                
+                Label:
+                    text: "Pontaria"
+                    valign: 'middle'
+
+                CheckBox:
+                    group: 'AandP'
+                    active: True
+           
+            GridLayout:
+                cols: 2
+
+                Label:
+                    text: "Esquiva"
+                    valign: 'middle'
+
+                CheckBox:
+                    group: 'EandB'
+                    active: True
+                    id: esquiva
+
+                Label:
+                    text: "Bloqueio"
+                    valign: 'middle'
+
+                CheckBox:
+                    group: 'EandB'
+                    active: True
+        Button:
+            text: "Pronto"
+            on_press: root.edcdone(dano, acerto, esquiva)
+
+<ChoiceEDCScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: (root.height)*0.10
+        padding: (root.height)*0.25
+
+        Label:
+            text: "Escolha o seu caso:"
+            size_hint_x: 0.5
+            pos_hint: {'x': 0.25}
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: (root.height)*0.10
+
+            Button:
+                text: "Não alterei os valores do EDC"
+                size_hint_y: 0.5
+                on_press: root.NaoMudei()
+
+            Button:
+                text: "Alterei os valores do EDC"
+                size_hint_y: 0.5
+                on_press: root.Mudei()
+
+<ModifiedEDC>
+    dano: dano
+    acerto: acerto
+    pontaria: pontaria
+    esquiva: esquiva
+    bloqueio: bloqueio
+    resistencia: resistencia
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+
+        Label: 
+            text: "Defina os parâmetros do seu EDC"
+            size_hint_y: 0.1
+
+        GridLayout:
+            cols: 3
+            size_hint_y: 0.8
+            spacing: 30
+            size_hint_x: 0.9
+            pos_hint: {'x':0.05}
+
+            Label:
+                text: "Dano:"
+                size_hint_y: 0.25
+
+            Label:
+                text: "Acerto:"
+                size_hint_y: 0.25
+
+            Label:
+                text: "Pontaria:"
+                size_hint_y: 0.25
+
+            TextInput:
+                id: dano         
+                size_hint_y: 0.25   
+                font_size: (root.height)*0.1
+                multiline: False
+                halign: 'center'
+                input_filter: 'int'
+
+            TextInput:
+                input_filter: 'int'
+                id: acerto
+                size_hint_y: 0.25
+                font_size: (root.height)*0.1
+                multiline: False
+                halign: 'center'
+                input_filter: 'int'
+
+            TextInput:
+                input_filter: 'int'
+                id: pontaria
+                size_hint_y: 0.25
+                font_size: (root.height)*0.1
+                multiline: False
+                halign: 'center'
+                input_filter: 'int'
+
+            Label:
+                text: "Esquiva:"
+                size_hint_y: 0.25
+            
+            Label:
+                text: "Bloqueio:"
+                size_hint_y: 0.25
+
+            Label:
+                text: "Resistência:"
+                size_hint_y: 0.25        
+
+            TextInput:
+                input_filter: 'int'
+                size_hint_y: 0.25
+                id: esquiva
+                font_size: (root.height)*0.1
+                multiline: False
+                halign: 'center'
+                input_filter: 'int'
+      
+            TextInput:
+                input_filter: 'int'
+                id: bloqueio
+                size_hint_y: 0.25
+                font_size: (root.height)*0.1
+                multiline: False
+                halign: 'center'
+                input_filter: 'int'
+                                
+            TextInput:
+                input_filter: 'int'
+                id: resistencia
+                size_hint_y: 0.25
+                font_size: (root.height)*0.1
+                multiline: False
+                halign: 'center'
+                input_filter: 'int'
+        
+        Button:
+            text: "Pronto"
+            size_hint_y: 0.1
+            size_hint_x: 0.25
+            pos_hint: {'x': 0.375}
+            on_press: root.ProcessarEDC(dano, acerto, pontaria, esquiva, bloqueio, resistencia)
+
+<AkumaScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        padding: (root.height)*0.05
+        spacing: (root.height)*0.025
+
+        Label:
+            text: "Seu Multiplicador"
+            size_hint_y: 0.05
+
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.05
+            spacing: (root.height)*0.2
+            padding: [(root.height)*0.15, 0]
+
+            ToggleButton:
+                group: 'multiplicador'
+                state: 'down'
+                text: "8x"
+                id: mul8
+                size_hint_x: (root.height)*0.05
+                on_press: root.ChangeMul(8)
+
+            
+            ToggleButton:
+                group: 'multiplicador'
+                text: "9x"
+                id: mul9
+                size_hint_x: (root.height)*0.05
+                on_press: root.ChangeMul(9)
+
+        Label:
+            text: "Crie e ordene as formas como quiser\nA forma que aparecerá na tabela principal será a primeira"
+            size_hint_y: 0.05
+
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.75
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    id: listaakuma
+                    size_hint_y: 0.7
+
+                Label:
+                    text: "Qual forma quer apagar/mover?"
+                    size_hint_y: 0.1
+
+                TextInput:
+                    input_filter: 'int'
+                    id: orglist
+                    size_hint_y: 0.1
+
+                GridLayout:
+                    cols: 2
+                    size_hint_y: 0.1
+
+                    Button:
+                        text: "Apagar forma"
+                        on_press: root.DelList(orglist)
+                    
+                    Button:
+                        text: "Colocar no topo"
+                        on_press: root.SwapForm(orglist)
+            
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    text: "Parâmetros da akuma:"
+                    size_hint_y: 0.1
+
+                GridLayout:
+                    cols: 2
+                    size_hint_y: 0.8
+
+                    Label:
+                        text: "Dano"
+                        size_hint_y: 1/7
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: dano
+                        size_hint_y: 1/7
+
+                    Label:
+                        text: "Acerto"
+                        size_hint_y: 1/7
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: acerto
+                        size_hint_y: 1/7
+
+                    Label:
+                        text: "Pontaria"
+                        size_hint_y: 1/7
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: pontaria
+                        size_hint_y: 1/7
+
+                    Label:
+                        text: "Esquiva"
+                        size_hint_y: 1/7
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: esquiva
+                        size_hint_y: 1/7
+
+                    Label:
+                        text: "Bloqueio"
+                        size_hint_y: 1/7
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: bloqueio
+                        size_hint_y: 1/7
+
+                    Label:
+                        text: "Resistência"
+                        size_hint_y: 1/7
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: resistencia
+                        size_hint_y: 1/7
+            
+                    Label:
+                        text: "Nome da Forma"
+                        size_hint_y: 1/7
+
+                    TextInput:
+                        id: nome
+                        size_hint_y: 1/7
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x: 0.5
+                    pos_hint: {'x': 0.25}
+                    text: "Criar forma"
+                    on_press: root.CreateForm(dano, acerto, pontaria, esquiva, bloqueio, resistencia, nome)
+        
+        Button:
+            size_hint_y: 0.05
+            size_hint_x: 0.25
+            pos_hint: {'x': 0.375}
+            text: "Acabei"
+            on_press: root.ProcessarAkuma()
+
+<HakiScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: (root.height)*0.05
+        padding: (root.height)*0.15
+
+        Label:
+            text: "Quais Hakis você tem?"
+            size_hint_y: 0.2
+
+        GridLayout:
+            cols: 3
+            size_hint_y: 0.3
+            spacing: 10
+
+            Label:
+                text: "Busou Haki\nAKA Armamento"
+                size_hint_y: 0.5
+            Label:
+                text: "Kenbun Haki\nAKA Observação"
+                size_hint_y: 0.5
+            Label:
+                text: "Do Rei"
+                size_hint_y: 0.5
+
+            ToggleButton:
+                text: "Sim"
+                size_hint_y: 0.5
+                id: busou
+                on_press: root.AttBusou()
+
+            ToggleButton:
+                size_hint_y: 0.5
+                text: "Sim"
+                id: kenbun
+                on_press: root.AttKenbun()
+        
+            ToggleButton:
+                size_hint_y: 0.5
+                text: "Sim"
+                id: rei
+                on_press: root.AttRei()
+        
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.3
+
+            Label:
+                text: "XP do Busou"
+                size_hint_y: 0.5
+
+            Label:
+                text: "XP do Kenbun"
+                size_hint_y: 0.5
+
+            TextInput:
+                id: inputxpbusou
+                size_hint_y: 0.5
+                input_filter: 'int'
+                halign: 'center'
+                font_size: (root.height)*0.06
+
+            TextInput:
+                id: inputxpkenbun
+                size_hint_y: 0.5
+                input_filter: 'int'
+                halign: 'center'
+                font_size: (root.height)*0.06
+
+        Button:
+            size_hint_y: 0.2
+            size_hint_x: 0.4
+            pos_hint: {'x': 0.3}
+            text: "Pronto"
+            on_press: root.ProcessarHaki(inputxpbusou,inputxpkenbun)
+
+<CaminhoScreen>   
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: (root.height)*0.05
+        padding: (root.height)*0.05
+
+        Label:
+            text: 'Marque os caminhos que você tomou'
+            size_hint_y: 0.05
+
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.85
+
+            Label:
+                text: 'Busou Haki'
+                size_hint_y: 0.1
+
+            Label:
+                text: 'Kenbun Haki'
+                size_hint_y: 0.1
+
+            GridLayout:
+                cols: 2
+                size_hint_y: 0.4
+
+                Label:
+                    text: "Tribal Haki"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: tribal
+    
+                Label:
+                    text: "Imbuir"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: imbuir
+                
+                Label:
+                    text: "Superioridade"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: superioridade
+
+            GridLayout:
+                cols: 2
+                size_hint_y: 0.55
+
+                Label:
+                    text: "Foresight"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: foresight
+    
+                Label:
+                    text: "Ver Auras"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: verauras
+                
+                Label:
+                    text: "Emoções"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: emocoes
+
+                Label:
+                    text: "Ouvir Vozes"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: ouvirvozes
+
+            
+            Label:
+                text: "Mestre"
+                size_hint_y: 0.1
+            Label:
+                text: "Mestre"
+                size_hint_y: 0.1
+            GridLayout:
+                cols: 2
+                size_hint_y: 0.4
+
+                Label:
+                    text: "Ryou Avançado"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: ryou
+    
+                Label:
+                    text: "Impregnação Permanente"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: impregnacao
+                
+                Label:
+                    text: "Corpo Completo"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: corpo
+
+            GridLayout:
+                cols: 2
+                size_hint_y: 0.25
+
+                Label:
+                    text: "Previsão do Futuro"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: previsao
+    
+                Label:
+                    text: "A Voz de Todas as Coisas"
+                    valign: 'middle'
+
+                CheckBox:
+                    disabled: True
+                    id: vozcoisas
+        
+        Button:
+            text: "Pronto"
+            size_hint_y: 0.1
+            size_hint_x: 0.4
+            pos_hint: {'x': 0.3}
+            on_press: root.ProcessarCaminho(tribal, imbuir, superioridade, ryou, impregnacao, corpo, foresight, verauras, emocoes, ouvirvozes, previsao, vozcoisas)
+
+<GunScreen>
+    BoxLayout:
+        orientation:'vertical'
+        padding: (root.height)*0.05
+        spacing: (root.height)*0.05
+
+        Label:
+            text: "Qual o seu tipo de arma?"
+            size_hint_y: 0.1    
+
+        GridLayout:
+            cols:3
+            size_hint_y: 0.2
+            spacing: 10
+
+            ToggleButton:
+                text: "Normal, de dano fixo"
+                group: 'tipoarma'
+                id: armanormal
+                on_press: root.ChangeGunType(0)
+
+            ToggleButton:
+                text: "De dano progressivo"
+                group: 'tipoarma'
+                id: lw
+                on_press: root.ChangeGunType(1)
+
+            ToggleButton:
+                text: "Babylon/Meitou"
+                group: 'tipoarma'
+                id: babylon
+                on_press: root.ChangeGunType(2)
+
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.5
+
+            Label:
+                id: danoarma
+
+            TextInput:
+                id: inputdanoarma
+
+            Label:
+                text: "Multiplicador do Acerto: "
+
+            TextInput:
+                id: inputacertoarma
+
+            Label:
+                text: "Multiplicador da Pontaria: "
+
+            TextInput:
+                id: inputpontariaarma
+
+        Button:
+            text: "Pronto"
+            size_hint_y: 0.2
+            size_hint_x: 0.4
+            pos_hint: {'x': 0.3}
+            on_press: root.ProcessarArma(inputdanoarma, inputacertoarma, inputpontariaarma)            
+
+<ItemScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        padding: (root.height)*0.05
+        spacing: (root.height)*0.025
+
+        Label:
+            text: "Crie seus itens como quiser\nO botão extra abaixo é para somar automaticamente seus itens ao baixar a ficha"
+            size_hint_y: 0.05
+      
+        ToggleButton:
+            text: "Juntar Tudo na Ficha"
+            id: itensjuntos
+            on_press: root.AltBaixar()
+            size_hint_y: 0.1
+            size_hint_x: 0.4
+            pos_hint: {'x': 0.3}
+
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.8
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    id: listaitens
+                    size_hint_y: 0.7
+
+                Label:
+                    text: "Quer excluir algum item? Qual:"
+                    size_hint_y: 0.1
+
+                TextInput:
+                    input_filter: 'int'
+                    id: orglist
+                    size_hint_y: 0.1
+
+                Button:
+                    text: "Apagar Item"
+                    size_hint_y: 0.1
+                    on_press: root.DelList(orglist)
+                                
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    text: "Parâmetros do Item:"
+                    size_hint_y: 0.1
+
+                GridLayout:
+                    cols: 2
+                    size_hint_y: 0.8
+
+                    Label:
+                        text: "Dano"
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: dano
+
+                    Label:
+                        text: "Acerto"
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: acerto
+
+                    Label:
+                        text: "Pontaria"
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: pontaria
+
+                    Label:
+                        text: "Esquiva"
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: esquiva
+
+                    Label:
+                        text: "Bloqueio"
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: bloqueio
+
+                    Label:
+                        text: "Resistência"
+                    
+                    TextInput:
+                        input_filter: 'int'
+                        id: resistencia
+            
+                    Label:
+                        text: "Nome do Item"
+
+                    TextInput:
+                        id: nome
+
+                Button:
+                    text: "Criar Item"
+                    size_hint_y: 0.1
+                    on_press: root.CreateItem(dano, acerto, pontaria, esquiva, bloqueio, resistencia, nome)
+        
+        Button:
+            text: "Acabei"
+            size_hint_y: 0.05
+            size_hint_x: 0.4
+            pos_hint: {'x': 0.3}
+            on_press: root.ProcessarItens(1)
+
+<ColorScreen>
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Definir cores ao baixar ficha"
+            size_hint_y: 0.05
+
+        Label:
+            text: "Racial, EDC, Bônus são padrões do fórum, mas vai que você quer mudar"
+            size_hint_y: 0.05
+
+        Label:
+            text: "Haki's foi utilizado as cores do tópico de Haki"
+            size_hint_y: 0.05
+
+        Label:
+            text: "Demais cores a gosto do criador do programa"
+            size_hint_y: 0.05
+
+        Label:
+            text: "Ao colocar uma cor, coloque # antes se for Hexadecimal"
+            size_hint_y: 0.05
+
+        Label:
+            text: "Ou só o nome para as que forem possíveis"
+            size_hint_y: 0.05
+
+        Label:
+            text: "Pode deixar em branco se quiser deixar como está atualmente"
+            size_hint_y: 0.05
+
+        GridLayout:
+            cols: 3
+
+            Label: 
+                text: "Cores Atuais"
+
+            Label:
+                text: ""
+
+            Label:
+                text: "Para trocar:"
+
+            Label:
+                id: brutocolor
+            
+            Label:
+                text: "Bruto:"
+
+            TextInput:
+                id: inputbrutocolor
+
+            Label:
+                id: racialcolor
+            
+            Label:
+                text: "Racial:"
+
+            TextInput:
+                id: inputracialcolor
+
+            Label:
+                id: edccolor
+            
+            Label:
+                text: "EDC:"
+
+            TextInput:
+                id: inputedccolor
+
+            Label:
+                id: akumacolor
+            
+            Label:
+                text: "Akuma:"
+
+            TextInput:
+                id: inputakumacolor
+
+            Label:
+                id: armacolor
+            
+            Label:
+                text: "Arma:"
+
+            TextInput:
+                id: inputarmacolor
+
+            Label:
+                id: hakibcolor
+            
+            Label:
+                text: "Haki Busou:"
+
+            TextInput:
+                id: inputhakibcolor
+
+            Label:
+                id: hakikcolor
+            
+            Label:
+                text: "Haki Kenbun:"
+
+            TextInput:
+                id: inputhakikcolor
+
+            Label:
+                id: itemcolor
+            
+            Label:
+                text: "Item:"
+
+            TextInput:
+                id: inputitemcolor
+
+            Label:
+                id: bonuscolor
+            
+            Label:
+                text: "Bônus:"
+
+            TextInput:
+                id: inputbonuscolor
+
+            Label:
+                id: totalcolor
+            
+            Label:
+                text: "Total:"
+
+            TextInput:
+                id: inputtotalcolor
+
+            Label:
+                id: classificacaocolor
+            
+            Label:
+                text: "Classificação:"
+
+            TextInput:
+                id: inputclassificacaocolor
+
+            Label:
+                text: ""
+
+            Label:
+                text: ""
+
+            Button:
+                text: "Atualizar Cores"
+                on_press: root.AttCor(inputbrutocolor, inputracialcolor, inputedccolor, inputakumacolor, inputarmacolor, inputhakibcolor, inputhakikcolor, inputitemcolor, inputbonuscolor, inputtotalcolor, inputclassificacaocolor)
+
+        Button:
+            text: "Pronto"
+            on_press: root.manager.current = 'mainscreen'
+            size_hint_y: 0.05
+            size_hint_x: 0.3
+            pos_hint: {'x': 0.35}
+
+<MainScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [(root.width)*0.05, (root.height)*0.05]
+
+        GridLayout:
+            cols: 2
+            size_hint_y: (root.height)*0.05
+            
+            Label:
+                id: tagcontrole
+
+            ToggleButton:
+                text: "Projeção"
+                id: botaoprojecao
+                on_press: root.MudarProjecao()
+        
+        GridLayout:
+            cols: 4
+            id: linhacontrole
+            size_hint_y: (root.height)*0.05
+
+            Label:
+                id: level
+            
+            Label:
+                id: experiencia
+
+            Label:
+                id: hp
+                color: (1,0,0,1)
+
+            Label:
+                id: sp
+                color: (0,0,1,1)
+
+
+        GridLayout:
+            cols: 4
+            size_hint_y: (root.height)*0.05
+
+            Label:
+                id: berries
+                text: "Berries:"
+
+            TextInput:
+                id: inputberries
+
+            Label:
+                id: banco 
+                text: "Banco"
+
+            TextInput:
+                id: inputbanco
+
+        GridLayout:
+            cols: 7
+            size_hint_y: (root.height)*0.05
+            spacing: 20
+            padding: [20, 2]
+
+            Button:
+                text: "Raça"
+                on_press: root.manager.current = 'raca'
+            
+            Button:
+                text: "EDC"
+                on_press: root.QualEDC()
+
+            Button:
+                text: "Akuma"
+                on_press: root.Akuma()
+
+            Button:
+                text: "Haki"
+                on_press: root.Haki()
+
+            Button:
+                text: "Arma"
+                on_press: root.Arma()
+
+            Button:
+                text: "Itens"
+                on_press: root.Itens()
+
+            Button:
+                text: "Cores"
+                on_press: root.Colors()
+        
+        Label:
+            id: avisopontos            
+            size_hint_y: (root.height)*0.05
+            
+        GridLayout:
+            cols: 14
+            size_hint_y: (root.height)*0.50
+
+            Label:
+                text: "Atributos"
+            
+            Label:
+                text: "Bruto"
+            
+            Label:
+                text: "Racial"
+
+            Label:
+                text: "EDC"
+            
+            Label:
+                text: "Akuma"
+            
+            Label:
+                text: "Haki"
+            
+            Label:
+                text: "Caminho do Haki"
+
+            Label:
+                text: "Arma"
+
+            Label:
+                text: "Itens"
+            
+            Label:
+                text: "Bônus"
+
+            Label:
+                text: ""
+            
+            Label:
+                text: "Total"
+
+            Label:
+                text: ""
+            
+            Label:
+                text: "Graduação"
+            
+            Label:
+                text: "Dano"
+            
+            Label:
+
+                id: danobruto
+            
+            Label:
+                id: danoracial
+            
+            Label:
+                id: danoedc
+            
+            Label:
+
+                id: danoakuma
+            
+            Label:
+
+                id: danohaki
+            
+            Label:
+
+                id: danocaminho
+            
+            Label:
+
+                id: danoarma
+            
+            Label:
+
+                id: danoitem
+            
+            Label:
+                text: ""
+                color: (1, 165/255, 0, 1)
+            
+            Label:
+                text: "="
+            
+            Label:
+                id: danototal
+            
+            Label:
+                text: "~"
+            
+            Label:
+                id: danograduacao
+            
+            Label:
+                text: "Acerto"
+            
+            Label:
+
+                id: acertobruto
+            
+            Label:
+                id: acertoracial
+            
+            Label:
+                id: acertoedc
+            
+            Label:
+
+                id: acertoakuma
+            
+            Label:
+
+                id: acertohaki
+            
+            Label:
+
+                id: acertocaminho
+            
+            Label:
+
+                id: acertoarma
+            
+            Label:
+
+                id: acertoitem
+            
+            Label:
+
+                id: acertobonus
+                color: (1, 165/255, 0, 1)
+            
+            Label:
+                text: "="
+            
+            Label:
+                id: acertototal
+            
+            Label:
+                text: "~"
+            
+            Label:
+                id: acertograduacao
+            
+            Label:
+                text: "Pontaria"
+            
+            Label:
+
+                id: pontariabruto
+            
+            Label:
+                id: pontariaracial
+            
+            Label:
+                id: pontariaedc
+            
+            Label:
+
+                id: pontariaakuma
+            
+            Label:
+
+                id: pontariahaki
+            
+            Label:
+
+                id: pontariacaminho
+            
+            Label:
+
+                id: pontariaarma
+            
+            Label:
+
+                id: pontariaitem
+            
+            Label:
+
+                id: pontariabonus
+                color: (1, 165/255, 0, 1)
+            
+            Label:
+                text: "="
+            
+            Label:
+                id: pontariatotal
+            
+            Label:
+                text: "~"
+            
+            Label:
+                id: pontariagraduacao
+
+            Label:
+                text: "Esquiva"
+            
+            Label:
+
+                id: esquivabruto
+            
+            Label:
+                id: esquivaracial
+            
+            Label:
+                id: esquivaedc
+            
+            Label:
+
+                id: esquivaakuma
+            
+            Label:
+
+                id: esquivahaki
+            
+            Label:
+
+                id: esquivacaminho
+            
+            Label:
+                text: ""
+            
+            Label:
+
+                id: esquivaitem
+            
+            Label:
+
+                id: esquivabonus
+                color: (1, 165/255, 0, 1)
+            
+            Label:
+                text: "="
+            
+            Label:
+                id: esquivatotal
+            
+            Label:
+                text: "~"
+            
+            Label:
+                id: esquivagraduacao
+
+            Label:
+                text: "Bloqueio"
+            
+            Label:
+
+                id: bloqueiobruto
+            
+            Label:
+                id: bloqueioracial
+            
+            Label:
+                id: bloqueioedc
+            
+            Label:
+
+                id: bloqueioakuma
+            
+            Label:
+
+                id: bloqueiohaki
+            
+            Label:
+
+                id: bloqueiocaminho
+            
+            Label:
+                text: ""
+
+            Label:
+
+                id: bloqueioitem
+            
+            Label:
+
+                id: bloqueiobonus
+                color: (1, 165/255, 0, 1)
+            
+            Label:
+                text: "="
+            
+            Label:
+                id: bloqueiototal
+            
+            Label:
+                text: "~"
+            
+            Label:
+                id: bloqueiograduacao
+
+            Label:
+                text: "Resistência"
+            
+            Label:
+
+                id: resistenciabruto
+            
+            Label:
+                id: resistenciaracial
+            
+            Label:
+                id: resistenciaedc
+            
+            Label:
+
+                id: resistenciaakuma
+            
+            Label:
+
+                id: resistenciahaki
+            
+            Label:
+
+                id: resistenciacaminho
+            
+            Label:
+                text: ""
+
+            Label:
+
+                id: resistenciaitem
+            
+            Label:
+                text: ""
+            
+            Label:
+                text: "="
+            
+            Label:
+                id: resistenciatotal
+            
+            Label:
+                text: "~"
+            
+            Label:
+                id: resistenciagraduacao
+
+        GridLayout:
+            cols: 6
+            size_hint_y: (root.height)*0.20
+            spacing: 5
+            padding: [5, 2]
+
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    text: "Dano"
+
+                GridLayout:
+                    cols: 3
+
+                    Button:
+                        text: "+1"
+                        on_press: root.Add(0,1)
+
+                    Button:
+                        text: "+5"
+                        on_press: root.Add(0,5)
+
+                    Button:
+                        text: "+10"
+                        on_press: root.Add(0,10)
+
+                    Button:
+                        text: "-1"
+                        on_press: root.Sub(0,1)
+
+                    Button:
+                        text: "-5"
+                        on_press: root.Sub(0,5)
+                    
+                    Button:
+                        text: "-10"
+                        on_press: root.Sub(0,10)
+                
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    text: "Acerto"
+
+                GridLayout:
+                    cols: 3
+
+                    Button:
+                        text: "+1"
+                        on_press: root.Add(1,1)
+
+                    Button:
+                        text: "+5"
+                        on_press: root.Add(1,5)
+
+                    Button:
+                        text: "+10"
+                        on_press: root.Add(1,10)
+
+                    Button:
+                        text: "-1"
+                        on_press: root.Sub(1,1)
+
+                    Button:
+                        text: "-5"
+                        on_press: root.Sub(1,5)
+                    
+                    Button:
+                        text: "-10"
+                        on_press: root.Sub(1,10)
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    text: "Pontaria"
+
+                GridLayout:
+                    cols: 3
+
+                    Button:
+                        text: "+1"
+                        on_press: root.Add(2,1)
+
+                    Button:
+                        text: "+5"
+                        on_press: root.Add(2,5)
+
+                    Button:
+                        text: "+10"
+                        on_press: root.Add(2,10)
+
+                    Button:
+                        text: "-1"
+                        on_press: root.Sub(2,1)
+
+                    Button:
+                        text: "-5"
+                        on_press: root.Sub(2,5)
+                    
+                    Button:
+                        text: "-10"
+                        on_press: root.Sub(2,10)
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    text: "Esquiva"
+
+                GridLayout:
+                    cols: 3
+
+                    Button:
+                        text: "+1"
+                        on_press: root.Add(3,1)
+
+                    Button:
+                        text: "+5"
+                        on_press: root.Add(3,5)
+
+                    Button:
+                        text: "+10"
+                        on_press: root.Add(3,10)
+
+                    Button:
+                        text: "-1"
+                        on_press: root.Sub(3,1)
+
+                    Button:
+                        text: "-5"
+                        on_press: root.Sub(3,5)
+                    
+                    Button:
+                        text: "-10"
+                        on_press: root.Sub(3,10)
+            
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    text: "Bloqueio"
+
+                GridLayout:
+                    cols: 3
+
+                    Button:
+                        text: "+1"
+                        on_press: root.Add(4,1)
+
+                    Button:
+                        text: "+5"
+                        on_press: root.Add(4,5)
+
+                    Button:
+                        text: "+10"
+                        on_press: root.Add(4,10)
+
+                    Button:
+                        text: "-1"
+                        on_press: root.Sub(4,1)
+
+                    Button:
+                        text: "-5"
+                        on_press: root.Sub(4,5)
+                    
+                    Button:
+                        text: "-10"
+                        on_press: root.Sub(4,10)
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Label:
+                    text: "Resistência"
+
+                GridLayout:
+                    cols: 3
+
+                    Button:
+                        text: "+1"
+                        on_press: root.Add(5,1)
+
+                    Button:
+                        text: "+5"
+                        on_press: root.Add(5,5)
+
+                    Button:
+                        text: "+10"
+                        on_press: root.Add(5,10)
+
+                    Button:
+                        text: "-1"
+                        on_press: root.Sub(5,1)
+
+                    Button:
+                        text: "-5"
+                        on_press: root.Sub(5,5)
+                    
+                    Button:
+                        text: "-10"
+                        on_press: root.Sub(5,10)
+
+        GridLayout:
+            cols: 2
+            size_hint_y: (root.height)*0.05
+
+
+            Button:
+                text: "Baixar Dados para usos futuros"
+                on_press: root.BaixarDados()
+
+            Button:
+                text: "Baixar Atributos"
+                on_press: root.BaixarAtributos()
