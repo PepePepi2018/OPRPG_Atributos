@@ -89,12 +89,12 @@ def codeatributos(lvl, dados, pontos, formas, itens, cores):
                 for j in range(len(formas)):
                     if formas[j][i] != 0:
                         texto = f'{texto}(+{str(formas[j][i])} {str(formas[j][6])}) '
-                else:
-                    texto = f'{texto}[color={cores[3]}]'
-                    for j in range(len(formas)):
-                        if formas[j][i] != 0:
-                            texto = f'{texto}(+{str(formas[j][i])} {str(formas[j][6])})'
-                    texto = f'{texto}[/color] '
+            else:
+                texto = f'{texto}[color={cores[3]}]'
+                for j in range(len(formas)):
+                    if formas[j][i] != 0:
+                        texto = f'{texto}(+{str(formas[j][i])} {str(formas[j][6])})'
+                texto = f'{texto}[/color] '
 
         # Arma
         if pontos[i][6] != 0:

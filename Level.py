@@ -68,7 +68,7 @@ def HP(exp):
     
 
 def SP(exp):
-    return math.floor(1,25*exp + 50)
+    return math.floor(1.25*exp + 50)
 
 def AttExp(exp, ganhoExp):
     if ganhoExp > 0:
